@@ -20,6 +20,7 @@ async def on_ready():
 
 
 @bot.command()
+@commands.has_any_role("Presidente", "Vice Presidente")
 async def esito(ctx, user, num, esito):
     channel = bot.get_channel(938423025995509830) 
     ema = discord.Embed(title = "Richiesta di tesseramento | ANM", color = discord.Color.dark_gray())
@@ -37,6 +38,7 @@ async def esito(ctx, user, num, esito):
     
 
 @bot.command()
+@commands.has_any_role("Presidente", "Vice Presidente")
 async def consiglio(ctx, *,question):
     authorID = ctx.message.author
     channel = bot.get_channel(939135102250782830)
@@ -48,6 +50,7 @@ async def consiglio(ctx, *,question):
 
 
 @bot.command()
+@commands.has_any_role("Presidente", "Vice Presidente")
 async def proposta(ctx, *,question):
     authorID = ctx.message.author
     channel = bot.get_channel(938418608416104469)
@@ -58,6 +61,7 @@ async def proposta(ctx, *,question):
     await channel.send(embed = em)
 
 @bot.command()
+@commands.has_any_role("Presidente", "Vice Presidente")
 async def votazione(ctx, arg1, *,question):
     reactions = [ "✅","❌", "🟨" ]
     authorID = ctx.message.author
@@ -112,6 +116,7 @@ async def votazione(ctx, arg1, *,question):
         await channel.send(embed = em)
 
 @bot.command()
+@commands.has_any_role("Presidente", "Vice Presidente")
 async def sciopero(ctx, data, *,motivo = None):
     channel = bot.get_channel(938422960476266496)
     em = discord.Embed(title = "ANM | 📢 Indizione sciopero 📢 | ANM",color = discord.Color.blue())
@@ -122,6 +127,7 @@ async def sciopero(ctx, data, *,motivo = None):
     await channel.send("||@everyone||")
 
 @bot.command()
+@commands.has_any_role("Presidente", "Vice Presidente")
 async def assemblea(ctx, data, *,motivo = None):
     channel = bot.get_channel(938418459262476298)
     em = discord.Embed(title = "Indizione assemblea",color = discord.Color.blue())

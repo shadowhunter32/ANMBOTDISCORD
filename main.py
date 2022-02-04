@@ -38,7 +38,7 @@ async def esito(ctx, user, num, esito):
     
 
 @bot.command()
-@commands.has_any_role("Presidente", "Vice Presidente")
+@commands.has_any_role("Presidente", "Vice Presidente", "Cittadino")
 async def consiglio(ctx, *,question):
     authorID = ctx.message.author
     channel = bot.get_channel(939135102250782830)

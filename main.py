@@ -19,17 +19,6 @@ async def on_ready():
 	print("Attivo!")
 
 
-if os.path.exists(os.getcwd() + "/config.json"):
-    with open("./config.json") as f:
-        configData = json.load(f)
-else:
-    configTemplate = {"Token":"","Prefix":"?"}
-
-    with open(os.getcwd()+ "/config.json", "w+") as f:
-        json.dump(configTemplate, f)
-
-token = configData["Token"]
-prefix = configData["Prefix"]
 @bot.command()
 async def esito(ctx, user, num, esito):
     channel = bot.get_channel(882402185806225409) 
@@ -141,4 +130,4 @@ async def assemblea(ctx, data, *,motivo = None):
     await channel.send(embed = em)
     await channel.send("||@everyone||")
 
-bot.run(token)
+bot.run(os.environ["DISCORD_TOKEN"])

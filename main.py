@@ -1,4 +1,4 @@
-import discord
+import discord.py
 from discord import member
 from discord import channel
 from discord.embeds import Embed

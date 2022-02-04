@@ -21,7 +21,7 @@ async def on_ready():
 
 @bot.command()
 async def esito(ctx, user, num, esito):
-    channel = bot.get_channel(882402185806225409) 
+    channel = bot.get_channel(938423025995509830) 
     ema = discord.Embed(title = "Richiesta di tesseramento | ANM", color = discord.Color.dark_gray())
     ema.add_field(name = "Richiedente tesseramento:", value = user, inline = False)
     ema.set_thumbnail(url = "https://media.discordapp.net/attachments/738728707090284626/938941060091097108/Tavola_disegno_1.png")
@@ -39,17 +39,18 @@ async def esito(ctx, user, num, esito):
 @bot.command()
 async def consiglio(ctx, *,question):
     authorID = ctx.message.author
+    channel = bot.get_channel(939135102250782830)
     em = discord.Embed(title = "Feedback per i consigli | Associazione Nazionale Magistrati",color = discord.Color.dark_blue())
     em.set_thumbnail(url ="https://media.discordapp.net/attachments/738728707090284626/938941060091097108/Tavola_disegno_1.png")
     em.add_field(name = "Inoltrato da:", value = f"{authorID.mention}", inline= False)
     em.add_field(name = f"Consiglio:", value = question)
-    await ctx.send(embed = em)
+    await channel.send(embed = em)
 
 
 @bot.command()
 async def proposta(ctx, *,question):
     authorID = ctx.message.author
-    channel = bot.get_channel(882402185806225409)
+    channel = bot.get_channel(938418608416104469)
     em = discord.Embed(title = "Proposta | Associazione Nazionale Magistrati",color = discord.Color.dark_blue())
     em.set_thumbnail(url ="https://thumbs.dreamstime.com/b/outline-suggestion-vector-icon-isolated-black-simple-line-element-illustration-social-media-concept-editable-stroke-white-144317121.jpg")
     em.add_field(name = "Inoltrato da:", value = f"{authorID.mention}", inline= False)
@@ -60,7 +61,7 @@ async def proposta(ctx, *,question):
 async def votazione(ctx, arg1, *,question):
     reactions = [ "✅","❌", "🟨" ]
     authorID = ctx.message.author
-    channel = bot.get_channel(882402185806225409) #channel's ID
+    channel = bot.get_channel(939135572067373066) #channel's ID
     em = discord.Embed(title = "Votazione Direttivo", description = f"Proposta  N.{arg1}", color = 0x1e00ff)
     em.set_thumbnail(url = "https://images.clipartlogo.com/files/istock/previews/1058/105869083-election-or-voting-sign-icon-hands-raised-up.jpg")
     em.add_field(name = "Di iniziativa di:", value = f"{authorID.mention}")
@@ -112,7 +113,7 @@ async def votazione(ctx, arg1, *,question):
 
 @bot.command()
 async def sciopero(ctx, data, *,motivo = None):
-    channel = bot.get_channel(882402185806225409)
+    channel = bot.get_channel(938422960476266496)
     em = discord.Embed(title = "ANM | 📢 Indizione sciopero 📢 | ANM",color = discord.Color.blue())
     em.add_field(name = "Indetto in data: ", value = data, inline=False)
     em.add_field(name = "Motivo:", value = motivo)
@@ -122,7 +123,7 @@ async def sciopero(ctx, data, *,motivo = None):
 
 @bot.command()
 async def assemblea(ctx, data, *,motivo = None):
-    channel = bot.get_channel(882402185806225409)
+    channel = bot.get_channel(938418459262476298)
     em = discord.Embed(title = "Indizione assemblea",color = discord.Color.blue())
     em.add_field(name = "Indetta in data: ", value = data, inline=False)
     em.add_field(name = "Motivo:", value = motivo)

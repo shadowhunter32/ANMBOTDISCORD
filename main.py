@@ -74,7 +74,7 @@ async def votazione(ctx, arg1, *,question):
     for name in reactions:
         emoji = get(ctx.guild.emojis, name=name)
         await vote_msg.add_reaction(emoji or name)
-    await asyncio.sleep(10) # wait 10 seconds
+    await asyncio.sleep(14400) # wait 10 seconds
     vote_msg = await vote_msg.channel.fetch_message(vote_msg.id)
     favorevole = 0
     contrario = 0
